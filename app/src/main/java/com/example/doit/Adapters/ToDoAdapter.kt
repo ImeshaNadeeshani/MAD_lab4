@@ -1,9 +1,6 @@
-
-
 package com.example.doit.Adapters
 
 
-import MainActivity
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,6 +10,7 @@ import android.widget.CheckBox
 import android.widget.CompoundButton
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doit.AddNewTask
+import com.example.doit.MainActivity
 import com.example.doit.Model.ToDoModel
 import com.example.doit.R
 import com.example.doit.Utils.DatabaseHandler
