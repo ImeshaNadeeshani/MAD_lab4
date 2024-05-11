@@ -7,10 +7,13 @@ import android.view.View
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.doit.Adapters.ToDoAdapter
+import com.example.doit.Model.ToDoModel
+import com.example.doit.Utils.DatabaseHandler
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import net.penguincoders.doit.Adapters.ToDoAdapter
-import net.penguincoders.doit.Model.ToDoModel
-import net.penguincoders.doit.Utils.DatabaseHandler
+//import net.penguincoders.doit.Adapters.ToDoAdapter
+//import net.penguincoders.doit.Model.ToDoModel
+//import net.penguincoders.doit.Utils.DatabaseHandler
 
 
 class MainActivity : AppCompatActivity(), DialogCloseListener {

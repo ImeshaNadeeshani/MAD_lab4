@@ -10,7 +10,9 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
-import net.penguincoders.doit.Adapters.ToDoAdapter
+import com.example.doit.Adapters.ToDoAdapter
+
+//import net.penguincoders.doit.Adapters.ToDoAdapter
 
 class RecyclerItemTouchHelper(private val adapter: ToDoAdapter) : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
 

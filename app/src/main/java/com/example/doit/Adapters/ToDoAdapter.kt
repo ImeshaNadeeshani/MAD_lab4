@@ -9,11 +9,11 @@ package com.example.doit.Adapters
     import android.widget.CheckBox
     import android.widget.CompoundButton
     import androidx.recyclerview.widget.RecyclerView
-    import net.penguincoders.doit.AddNewTask
-    import net.penguincoders.doit.MainActivity
-    import net.penguincoders.doit.Model.ToDoModel
-    import net.penguincoders.doit.R
-    import net.penguincoders.doit.Utils.DatabaseHandler
+    import com.example.doit.AddNewTask
+    import com.example.doit.MainActivity
+    import com.example.doit.Model.ToDoModel
+    import com.example.doit.R
+    import com.example.doit.Utils.DatabaseHandler
 
     class ToDoAdapter(private val db: DatabaseHandler, private val activity: MainActivity) :
         RecyclerView.Adapter<ToDoAdapter.ViewHolder>() {

@@ -13,9 +13,11 @@ import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import androidx.core.content.ContextCompat
+import com.example.doit.Model.ToDoModel
+import com.example.doit.Utils.DatabaseHandler
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import net.penguincoders.doit.Model.ToDoModel
-import net.penguincoders.doit.Utils.DatabaseHandler
+//import net.penguincoders.doit.Model.ToDoModel
+//import net.penguincoders.doit.Utils.DatabaseHandler
 
 class AddNewTask : BottomSheetDialogFragment() {
 
