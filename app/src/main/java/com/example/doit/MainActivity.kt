@@ -1,5 +1,3 @@
-package com.example.doit
-
 import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,15 +6,14 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doit.Adapters.ToDoAdapter
+import com.example.doit.AddNewTask
 import com.example.doit.Model.ToDoModel
+import com.example.doit.R
+import com.example.doit.RecyclerItemTouchHelper
 import com.example.doit.Utils.DatabaseHandler
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-//import net.penguincoders.doit.Adapters.ToDoAdapter
-//import net.penguincoders.doit.Model.ToDoModel
-//import net.penguincoders.doit.Utils.DatabaseHandler
 
-
-class MainActivity : AppCompatActivity(), DialogCloseListener {
+class MainActivity : AppCompatActivity(), AddNewTask.DialogCloseListener {
 
     private lateinit var db: DatabaseHandler
     private lateinit var tasksRecyclerView: RecyclerView
@@ -53,9 +50,9 @@ class MainActivity : AppCompatActivity(), DialogCloseListener {
     }
 
     override fun handleDialogClose(dialog: DialogInterface) {
-        taskList = db.getAllTasks().toMutableList()
+        taskList.clear() // Clear the existing list
+        taskList.addAll(db.getAllTasks().toMutableList()) // Refresh the list with updated data
         taskList.reverse()
-        tasksAdapter.setTasks(taskList)
         tasksAdapter.notifyDataSetChanged()
     }
 }

@@ -1,11 +1,11 @@
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("com.android.application")
+    id("kotlin-android")
 }
 
 android {
     namespace = "com.example.doit"
-    compileSdk = 34
+    compileSdkVersion(34)
 
     defaultConfig {
         applicationId = "com.example.doit"
@@ -18,7 +18,7 @@ android {
     }
 
     buildTypes {
-        release {
+        getByName("release") {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -36,7 +36,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
