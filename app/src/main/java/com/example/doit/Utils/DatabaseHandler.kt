@@ -5,7 +5,9 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import net.penguincoders.doit.Model.ToDoModel
+import com.example.doit.Model.ToDoModel
+
+//import net.penguincoders.doit.Model.ToDoModel
 
 class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, NAME, null, VERSION) {
 
