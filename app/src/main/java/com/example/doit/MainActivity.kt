@@ -1,22 +1,18 @@
-package com.example.doit
-
 import android.content.DialogInterface
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doit.Adapters.ToDoAdapter
+import com.example.doit.AddNewTask
 import com.example.doit.Model.ToDoModel
+import com.example.doit.R
 import com.example.doit.Utils.DatabaseHandler
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-//import net.penguincoders.doit.Adapters.ToDoAdapter
-//import net.penguincoders.doit.Model.ToDoModel
-//import net.penguincoders.doit.Utils.DatabaseHandler
 
-
-class MainActivity : AppCompatActivity(), DialogCloseListener {
+class MainActivity : AppCompatActivity(), AddNewTask.DialogCloseListener {
 
     private lateinit var db: DatabaseHandler
     private lateinit var tasksRecyclerView: RecyclerView
@@ -58,5 +54,8 @@ class MainActivity : AppCompatActivity(), DialogCloseListener {
         tasksAdapter.setTasks(taskList)
         tasksAdapter.notifyDataSetChanged()
     }
-}
 
+    fun removeTaskFromList(id: Int) {
+        tasksAdapter.removeTask(id)
+    }
+}

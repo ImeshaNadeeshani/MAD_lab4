@@ -1,6 +1,3 @@
-package com.example.doit
-
-import android.app.Activity
 import android.content.DialogInterface
 import android.graphics.Color
 import android.os.Bundle
@@ -16,8 +13,6 @@ import androidx.core.content.ContextCompat
 import com.example.doit.Model.ToDoModel
 import com.example.doit.Utils.DatabaseHandler
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-//import net.penguincoders.doit.Model.ToDoModel
-//import net.penguincoders.doit.Utils.DatabaseHandler
 
 class AddNewTask : BottomSheetDialogFragment() {
 
@@ -51,7 +46,7 @@ class AddNewTask : BottomSheetDialogFragment() {
             val task = bundle.getString("task")
             newTaskText.setText(task)
             task?.let {
-                if (it.length > 0)
+                if (it.isNotEmpty())
                     newTaskSaveButton.setTextColor(
                         ContextCompat.getColor(
                             requireContext(),
@@ -91,6 +86,7 @@ class AddNewTask : BottomSheetDialogFragment() {
             if (finalIsUpdate) {
                 arguments?.getInt("id")?.let { id ->
                     db.updateTask(id, text)
+                    (activity as? MainActivity)?.removeTaskFromList(id)
                 }
             } else {
                 val task = ToDoModel().apply {
